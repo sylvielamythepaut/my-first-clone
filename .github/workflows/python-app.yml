@@ -6,13 +6,15 @@ name: Python application
 on:
   push:
     branches: 
-      - test1
+      - 't*'
   pull_request:
     branches: [ master ]
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      SYLVIE: ${{ secrets.SYLVIE }}
 
     steps:
     - uses: actions/checkout@v2
@@ -28,6 +30,7 @@ jobs:
     - name: Lint with black
       run: |
         black --check .
+	echo $SYLVIE
     - name: Test with pytest
       run: |
         pytest
