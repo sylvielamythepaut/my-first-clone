@@ -31,7 +31,7 @@ jobs:
       run: |
         black --check .
         echo "checking secrets"
-        echo "%SYLVIE%"
+        echo %SYLVIE%
     - name: Test with pytest
       run: |
         pytest
