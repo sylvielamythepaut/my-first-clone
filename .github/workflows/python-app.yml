@@ -30,7 +30,7 @@ jobs:
     - name: Lint with black
       run: |
         black --check .
-	echo $SYLVIE
+        echo $SYLVIE
     - name: Test with pytest
       run: |
         pytest
